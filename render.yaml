@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: critical-alerts-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPERMETRICS_API_KEY
+        value: api_25u6Tyr6R7SPYtIiuSSfuMF12QX63FIjPjp8H32YSxhgxXSYppDM5hHYKi18hdZqRsOyY5NdRav_GwjNrAmJCSYSRby2umUz7o9N
+      - key: SUPERMETRICS_DS_USER
+        value: "26444438121908309"
+      - key: SUPERMETRICS_DS_USER_LIA
+        value: c727MKxYyV
+      - key: SUPERMETRICS_DS_USER_AW
+        value: dhirendra.kumar@joveo.com
+      - key: SUPERMETRICS_DS_USER_AC
+        value: dhirendra.kumar@joveo.com
