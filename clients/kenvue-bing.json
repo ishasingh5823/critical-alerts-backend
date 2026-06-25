@@ -1,0 +1,32 @@
+{
+  "id": "kenvue-bing",
+  "display_name": "Kenvue (Bing/Microsoft)",
+  "platforms": ["bing"],
+  "queries": [
+    {
+      "name": "kenvue_bing_ad_daily",
+      "platform": "bing",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "AC",
+        "ds_accounts": "188327879",
+        "date_range_type": "last_14_days_inc",
+        "fields": "CampaignId,CampaignName,AdGroupId,AdGroupName,AdId,AdTitle,Date,Cost,Impressions,Clicks,Conversions",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "kenvue_bing_ad_status",
+      "platform": "bing",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "AC",
+        "ds_accounts": "188327879",
+        "date_range_type": "yesterday",
+        "fields": "CampaignId,CampaignName,AdGroupId,AdGroupName,AdId,AdTitle,AdStatus",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "Bing/Microsoft Advertising for Kenvue (account 188327879). Hierarchy: Campaign -> Ad Group -> Ad. Conversions = 0 because Joveo measures applies ATS-side, but Clicks + Cost give us spend/CPC/CTR signals. Discovered 2026-05-27 via ds_user=dhirendra.kumar@joveo.com."
+}

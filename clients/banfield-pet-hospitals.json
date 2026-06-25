@@ -1,0 +1,34 @@
+{
+  "id": "banfield-pet-hospitals",
+  "display_name": "Banfield Pet Hospitals",
+  "platforms": [
+    "meta"
+  ],
+  "queries": [
+    {
+      "name": "banfield-pet-hospitals_meta_ad_daily",
+      "platform": "meta",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_723471602681564",
+        "date_range_type": "last_14_days_inc",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Date,Cost,Impressions,Link_clicks,Landing_page_views,Frequency,Reach",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "banfield-pet-hospitals_meta_ad_status",
+      "platform": "meta",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_723471602681564",
+        "date_range_type": "yesterday",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Ad_status",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "Joveo Meta ad account (Banfield Pet Hospitals, act_723471602681564). Auto-generated."
+}

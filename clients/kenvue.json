@@ -1,0 +1,34 @@
+{
+  "id": "kenvue",
+  "display_name": "Kenvue",
+  "platforms": [
+    "meta"
+  ],
+  "queries": [
+    {
+      "name": "kenvue_meta_ad_daily",
+      "platform": "meta",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_1417826285602744",
+        "date_range_type": "last_14_days_inc",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Date,Cost,Impressions,Link_clicks,Landing_page_views,Frequency,Reach",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "kenvue_meta_ad_status",
+      "platform": "meta",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_1417826285602744",
+        "date_range_type": "yesterday",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Ad_status",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "Kenvue corporate-recruitment Meta ad account. Campaigns named 'Joveo | AB&C | Kenvue | Meta | <Country> | <Function>'. Verified 2026-05-26: ad-level query returns full Campaign\u2192AdSet\u2192Ad hierarchy. `Landing_page_views` is our v1 'applies' proxy (Joveo measures real applies ATS-side, not in Meta)."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "joveo-inc-inr-ro-alt",
+  "display_name": "Joveo Inc (INR Read-Only #2)",
+  "platforms": [
+    "meta"
+  ],
+  "queries": [
+    {
+      "name": "joveo-inc-inr-ro-alt_meta_ad_daily",
+      "platform": "meta",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_1413122343324180",
+        "date_range_type": "last_14_days_inc",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Date,Cost,Impressions,Link_clicks,Landing_page_views,Frequency,Reach",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "joveo-inc-inr-ro-alt_meta_ad_status",
+      "platform": "meta",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_1413122343324180",
+        "date_range_type": "yesterday",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Ad_status",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "Second 'Joveo Inc' read-only INR account (act_1413122343324180). Auto-generated with -alt suffix to avoid slug collision with act_1489900758861191."
+}

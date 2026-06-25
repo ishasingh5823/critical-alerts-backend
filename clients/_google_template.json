@@ -1,0 +1,32 @@
+{
+  "id": "_google_template",
+  "display_name": "[TEMPLATE] Google Ads client",
+  "platforms": ["google"],
+  "queries": [
+    {
+      "name": "REPLACE_ME_ad_daily",
+      "platform": "google",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "AW",
+        "ds_accounts": "REPLACE_WITH_GOOGLE_CUSTOMER_ID (e.g. 1234567890)",
+        "date_range_type": "last_14_days_inc",
+        "fields": "CampaignId,CampaignName,AdGroupId,AdGroupName,Id,HeadlinePart1,Date,Cost,Impressions,Clicks,Conversions",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "REPLACE_ME_ad_status",
+      "platform": "google",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "AW",
+        "ds_accounts": "REPLACE_WITH_GOOGLE_CUSTOMER_ID",
+        "date_range_type": "yesterday",
+        "fields": "CampaignId,CampaignName,AdGroupId,AdGroupName,Id,HeadlinePart1,Status,PolicySummaryApprovalStatus",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "TEMPLATE — Google Ads. As of 2026-05-27, the Joveo Social Ops Supermetrics team did NOT have Google Ads connected (ds_user 26444438121908309 returned QUERY_AUTH_UNAVAILABLE for ds_id=AW). To activate: (1) add Google Ads as a data source in Supermetrics Hub, (2) duplicate this file as <client>.json, (3) fill in Google customer ID in ds_accounts, (4) fix the field names if Supermetrics returns different headers. The backend field aliases already cover Google's standard field names — if a field isn't found it'll just be empty."
+}

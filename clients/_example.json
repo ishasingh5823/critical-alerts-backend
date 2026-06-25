@@ -1,0 +1,56 @@
+{
+  "id": "_example",
+  "display_name": "Example Client",
+  "platforms": ["meta", "google", "bing"],
+  "queries": [
+    {
+      "name": "daily_campaign_metrics_meta",
+      "platform": "meta",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_REPLACE_WITH_ACCOUNT_ID",
+        "date_range_type": "last_14_days_inc",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Date,Cost,Impressions,Link_clicks,Landing_page_views,Frequency,Reach",
+        "max_rows": 50000
+      }
+    }
+  ],
+  "alert_overrides": {
+    "_comment": "OPTIONAL. Per-client gate tuning. Omit entirely to use defaults. Each field below shows the default; only include the ones you want to change.",
+    "spike": {
+      "spend": {
+        "low_mult": 0.5,
+        "high_mult": 1.5,
+        "baseline_min": 5.0,
+        "today_pct_of_baseline": 0.0,
+        "severity": "CRITICAL"
+      },
+      "cpc": {
+        "low_mult": 0.6,
+        "high_mult": 1.5,
+        "baseline_volume_min": 10,
+        "today_pct_of_baseline": 0.3
+      },
+      "ctr": {
+        "low_mult": 0.6,
+        "high_mult": 1.5,
+        "baseline_volume_min": 50,
+        "today_pct_of_baseline": 0.3
+      },
+      "cpa": {
+        "low_mult": 0.5,
+        "high_mult": 1.5,
+        "baseline_volume_min": 2,
+        "today_pct_of_baseline": 0.3,
+        "severity": "CRITICAL"
+      }
+    },
+    "low_impressions": {
+      "today_max_pct": 0.30,
+      "baseline_min": 100.0,
+      "severity": "CRITICAL"
+    }
+  },
+  "notes": "Template — duplicate this file as <client>.json. The alert_overrides block is OPTIONAL; if omitted, defaults from backend/core/alerts/rules/*.py apply. Example real overrides: LinkedIn clients get baseline_volume_min lowered (3 for CPC, 30 for CTR) because LinkedIn volumes are inherently smaller."
+}

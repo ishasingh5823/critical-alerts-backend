@@ -1,0 +1,34 @@
+{
+  "id": "joveo-jobs-for-everyone-ro",
+  "display_name": "Joveo Jobs for Everyone RO",
+  "platforms": [
+    "meta"
+  ],
+  "queries": [
+    {
+      "name": "joveo-jobs-for-everyone-ro_meta_ad_daily",
+      "platform": "meta",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_1536724397737101",
+        "date_range_type": "last_14_days_inc",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Date,Cost,Impressions,Link_clicks,Landing_page_views,Frequency,Reach",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "joveo-jobs-for-everyone-ro_meta_ad_status",
+      "platform": "meta",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "FA",
+        "ds_accounts": "act_1536724397737101",
+        "date_range_type": "yesterday",
+        "fields": "Adcampaign_id,Adcampaign,Campaign_id,Campaign,Ad_id,Ad_name,Ad_status",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "Joveo Meta ad account (Joveo Jobs for Everyone RO, act_1536724397737101). Auto-generated."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "kenvue-gads",
+  "display_name": "Kenvue (Google Ads)",
+  "platforms": [
+    "google"
+  ],
+  "queries": [
+    {
+      "name": "kenvue-gads_ad_daily",
+      "platform": "google",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "AW",
+        "ds_accounts": "3099772366",
+        "date_range_type": "last_14_days_inc",
+        "fields": "CampaignId,CampaignName,AdGroupId,AdGroupName,AdId,HeadlinePart1,Date,Cost,Impressions,Clicks,Conversions",
+        "max_rows": 50000
+      }
+    },
+    {
+      "name": "kenvue-gads_ad_status",
+      "platform": "google",
+      "type": "ad_status",
+      "query": {
+        "ds_id": "AW",
+        "ds_accounts": "3099772366",
+        "date_range_type": "yesterday",
+        "fields": "CampaignId,CampaignName,AdGroupId,AdGroupName,AdId,HeadlinePart1,AdStatus,Cost",
+        "max_rows": 10000
+      }
+    }
+  ],
+  "notes": "Google Ads \u2014 Kenvue (3099772366). 1 of 25 Joveo GAds accounts. Conversions field has real data (unlike Meta) so Cost/Conversion alerts can fire. Hierarchy: Campaign -> AdGroup -> Ad."
+}

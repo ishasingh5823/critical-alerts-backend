@@ -1,0 +1,38 @@
+{
+  "id": "landmarksgujarat-sokrati-li",
+  "display_name": "LandmarksGujarat Sokrati (LinkedIn)",
+  "platforms": [
+    "linkedin"
+  ],
+  "queries": [
+    {
+      "name": "landmarksgujarat-sokrati-li_ad_daily",
+      "platform": "linkedin",
+      "type": "ad_daily",
+      "query": {
+        "ds_id": "LIA",
+        "ds_accounts": "511607152",
+        "date_range_type": "last_14_days_inc",
+        "fields": "Campaign_id,Campaign,Creative_id,Creative_title,Date,Cost,Impressions,Clicks,Landing_page_clicks",
+        "max_rows": 50000
+      }
+    }
+  ],
+  "notes": "LinkedIn account LandmarksGujarat Sokrati (act_511607152). 1-of-4 LI accounts had data when discovered. Hierarchy: Campaign -> Creative (no exposed middle tier). Applies = Landing page clicks.",
+  "alert_overrides": {
+    "spike": {
+      "cpc": {
+        "baseline_volume_min": 3
+      },
+      "ctr": {
+        "baseline_volume_min": 30
+      },
+      "cpa": {
+        "baseline_volume_min": 1
+      }
+    },
+    "low_impressions": {
+      "baseline_min": 30
+    }
+  }
+}
