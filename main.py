@@ -64,11 +64,7 @@ app = FastAPI(title="Critical Alert Dashboard", version="0.1.0",
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3002",
-        "http://localhost:4002",   # new frontend port
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -123,3 +119,4 @@ async def trigger_sync(background_tasks: BackgroundTasks):
 async def sync_status():
     """Tell the UI whether a sync is currently in flight."""
     return {"running": _sync_running}
+
